@@ -22,6 +22,7 @@ ParamsAudioProcessor::ParamsAudioProcessor()
                        )
 #endif
 {
+	dryWetMixer.setWetMixProportion (0.2f);
 }
 
 ParamsAudioProcessor::~ParamsAudioProcessor()
@@ -99,6 +100,8 @@ void ParamsAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock
 
 	delayLine.setMaximumDelayInSamples (static_cast<int> (sampleRate * 5.0)); // optional, get max value from parameter 
     delayLine.prepare (spec);
+
+	dryWetMixer.prepare (spec);
 }
 
 void ParamsAudioProcessor::releaseResources()
@@ -159,8 +162,12 @@ void ParamsAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce:
 	float delayTimeInSeconds = paramValueAtomicPointer->load () / 1000.0f; // get the delay time in seconds
 	float delayTimeInSamples = delayTimeInSeconds * spec.sampleRate; // convert to samples
 
+	dryWetMixer.pushDrySamples (audioBlock);
+
 	delayLine.setDelay (delayTimeInSamples);
-	delayLine.process ( context );
+	delayLine.process (context);
+
+	dryWetMixer.mixWetSamples (audioBlock);
 }
 
 //==============================================================================

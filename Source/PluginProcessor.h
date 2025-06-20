@@ -55,6 +55,8 @@ public:
 private:
 	APVTS state{ *this };
 	dsp::DelayLine<float> delayLine;
+	dsp::DryWetMixer<float> dryWetMixer;
+	
 	dsp::ProcessSpec spec;
 
     //==============================================================================
