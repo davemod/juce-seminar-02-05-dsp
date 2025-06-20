@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "configurations": [
+        {
+            "name": "(Mac) Launch Standalone",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Builds/MacOSX/build/Debug/${input:appname}.app/Contents/MacOS/${input:appname}",
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "MIMode": "lldb",
+            "logging": {
+                "moduleLoad": false
+            },
+            "preLaunchTask": "Build Standalone Debug"
+        },
+        {
+            "name": "(Mac) Launch VST3 Reaper",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/Applications/REAPER.app/Contents/MacOS/REAPER",
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "MIMode": "lldb",
+            "logging": {
+                "moduleLoad": false
+            },
+            "preLaunchTask": "Build VST3 Debug"
+        }
+    ],
+	"inputs": [
+		{
+			"id": "appname",
+			"type": "promptString",
+			"description": "Enter the name of the app to launch (without extension)",
+			"default": "MyApp"
+		}
+	]
+}

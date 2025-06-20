@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+    
+        {
+            "label": "Build Standalone Debug",
+            "type": "shell",
+            "command": "cd Builds/MacOSX/; xcodebuild -config Debug -project \"${input:appname}.xcodeproj\" -scheme \"${input:appname} - Standalone Plugin\" || exit 60",
+            "problemMatcher": "$gcc"
+        },
+            
+        {
+            "label": "Build VST3 Debug",
+            "type": "shell",
+            "command": "cd Builds/MacOSX/; xcodebuild -config Debug -project \"${input:appname}.xcodeproj\" -scheme \"${input:appname} - VST3\" || exit 60",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },    
+            "problemMatcher": "$gcc"
+        },
+    ],
+		"inputs": [
+		{
+			"id": "appname",
+			"type": "promptString",
+			"description": "Enter the name of the app to launch (without extension)",
+			"default": "MyApp"
+		}
+	]
+}

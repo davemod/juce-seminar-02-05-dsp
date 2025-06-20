@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="eUf5Mh" name="DSP" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="1" jucerFormatVersion="1">
+  <MAINGROUP id="ZofoTR" name="DSP">
+    <GROUP id="{2E0BC783-1FD4-2058-2E09-B5AFC66A4A65}" name="Source">
+      <FILE id="nD7rXD" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="DmgrSr" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="QbNbAa" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="ysVmyJ" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+      <FILE id="JDwsOX" name="APVTS.cpp" compile="1" resource="0" file="Source/APVTS.cpp"/>
+      <FILE id="H9ZSJH" name="APVTS.h" compile="0" resource="0" file="Source/APVTS.h"/>
+      <FILE id="rgQL21" name="Params.h" compile="0" resource="0" file="Source/Params.h"/>
+    </GROUP>
+    <GROUP id="{E8D9FEDD-2E97-05C1-62F6-F2EFE817FC1F}" name="Assets">
+      <FILE id="WEDOju" name="knob1.png" compile="0" resource="1" file="Assets/knob1.png"/>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="0"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="DSP"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="DSP"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="juce/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="juce/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="juce/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="juce/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="juce/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="juce/modules"/>
+        <MODULEPATH id="juce_core" path="juce/modules"/>
+        <MODULEPATH id="juce_data_structures" path="juce/modules"/>
+        <MODULEPATH id="juce_events" path="juce/modules"/>
+        <MODULEPATH id="juce_graphics" path="juce/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="juce/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="juce/modules"/>
+        <MODULEPATH id="juce_dsp" path="juce/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+</JUCERPROJECT>
